@@ -318,7 +318,7 @@ else
   echo ""
   if [ "$FAIL" -gt 0 ]; then
     echo -e "  ${RED}${BOLD}VULNERABLE${NC} — $FAIL check(s) indicate exposure to the eMudhra CA compromise."
-    echo "  See https://github.com/user/emudhra-checker for remediation steps."
+    echo "  See https://github.com/ikow/emudhra-ca-checker for remediation steps."
     exit 1
   else
     echo -e "  ${GREEN}${BOLD}No issues detected.${NC}"
