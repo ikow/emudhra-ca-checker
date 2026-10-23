@@ -1,0 +1,46 @@
+name: eMudhra CA Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'  # weekly Monday 6am UTC
+  workflow_dispatch:
+
+jobs:
+  check-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run check (bash)
+        run: ./check.sh
+      - name: Run check (JSON)
+        run: ./check.sh --json
+      - name: Run check (Python)
+        run: python3 check.py --json
+
+  check-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run check (bash)
+        run: ./check.sh
+
+  check-containers:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image:
+          - ubuntu:22.04
+          - ubuntu:24.04
+          - debian:bookworm
+          - alpine:3.20
+          - fedora:41
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check ${{ matrix.image }}
+        run: |
+          docker run --rm -v $PWD/check.sh:/check.sh:ro ${{ matrix.image }} \
+            bash -c "command -v bash >/dev/null || apk add --no-cache bash curl; bash /check.sh --json"

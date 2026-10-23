@@ -1,0 +1,147 @@
+{
+  "description": "Fixed versions for the eMudhra CA compromise across affected products",
+  "last_updated": "2026-10-22",
+  "products": [
+    {
+      "product": "Go",
+      "fixed_versions": ["1.26.10", "1.27.3"],
+      "cve": "CVE-2026-111943",
+      "mechanism": "SPKI hash denylist rejects chains containing the 8 compromised keys"
+    },
+    {
+      "product": "Python certifi",
+      "fixed_versions": ["2026.10.19"],
+      "mechanism": "emSign roots removed from bundled CA store"
+    },
+    {
+      "product": "pip",
+      "fixed_versions": ["26.2.2"],
+      "mechanism": "updated bundled certifi"
+    },
+    {
+      "product": "uv",
+      "fixed_versions": ["0.13.4"],
+      "mechanism": "updated bundled CA store"
+    },
+    {
+      "product": "pixi",
+      "fixed_versions": ["0.82.1"],
+      "mechanism": "updated CA store"
+    },
+    {
+      "product": "Mozilla NSS",
+      "fixed_versions": ["3.131.1"],
+      "mechanism": "emSign ECC Root CA - G3 removed from trust store"
+    },
+    {
+      "product": "Rust webpki-roots",
+      "fixed_versions": ["1.0.10"],
+      "advisory": "RUSTSEC-2026-0382",
+      "mechanism": "emSign roots removed"
+    },
+    {
+      "product": "Rust webpki-root-certs",
+      "fixed_versions": ["1.0.10"],
+      "advisory": "RUSTSEC-2026-0381"
+    },
+    {
+      "product": "Rust rustls-webpki",
+      "fixed_versions": ["0.103.16"],
+      "advisory": "RUSTSEC-2026-0383"
+    },
+    {
+      "product": "Rustup",
+      "fixed_versions": ["1.29.2"]
+    },
+    {
+      "product": "curl CA bundle (cacert.pem)",
+      "fixed_versions": ["2026-10-20"]
+    },
+    {
+      "product": "Node.js",
+      "fixed_versions": ["22.23.4", "24.22.1", "26.12.1"],
+      "mechanism": "updated bundled Mozilla root store"
+    },
+    {
+      "product": "Electron",
+      "fixed_versions": ["42.11.16", "43.8.1", "44.9.1"]
+    },
+    {
+      "product": "Cloudflare CFSSL trust store",
+      "fixed_versions": ["2026.10.1"]
+    },
+    {
+      "product": "Homebrew ca-certificates",
+      "fixed_versions": ["2026-09-25_1"]
+    },
+    {
+      "product": "Composer ca-bundle",
+      "fixed_versions": ["1.4.16", "1.6.0"]
+    },
+    {
+      "product": "Elixir castore",
+      "fixed_versions": ["1.0.22"]
+    },
+    {
+      "product": "Perl Mozilla::CA",
+      "fixed_versions": ["20261020"]
+    },
+    {
+      "product": "Ubuntu ca-certificates",
+      "fixed_versions": [
+        "20260816ubuntu0.22.04.1",
+        "20260816ubuntu0.24.04.1",
+        "20260816ubuntu0.26.04.1",
+        "20260816ubuntu0.26.10.1"
+      ]
+    },
+    {
+      "product": "Debian ca-certificates",
+      "fixed_versions": [
+        "20250419~deb12u2",
+        "20250419+deb13u1",
+        "20260816+nmu1"
+      ]
+    },
+    {
+      "product": "Alpine Linux ca-certificates",
+      "fixed_versions": ["20261020-r0"]
+    },
+    {
+      "product": "Fedora ca-certificates",
+      "fixed_versions": ["2026.2.92_v9.0.319"]
+    },
+    {
+      "product": "Arch Linux ca-certificates-mozilla",
+      "fixed_versions": ["3.131.1-1"]
+    },
+    {
+      "product": "Gentoo ca-certificates",
+      "fixed_versions": ["20260816.3.125"]
+    },
+    {
+      "product": "Chainguard ca-certificates",
+      "fixed_versions": ["20260909-r3"]
+    },
+    {
+      "product": "FreeBSD ca_root_nss",
+      "fixed_versions": [],
+      "status": "pending as of 2026-10-22"
+    },
+    {
+      "product": "Java (cacerts)",
+      "fixed_versions": [],
+      "status": "pending as of 2026-10-22"
+    },
+    {
+      "product": "Bun",
+      "fixed_versions": [],
+      "status": "pending as of 2026-10-22"
+    },
+    {
+      "product": "Erlang certifi",
+      "fixed_versions": [],
+      "status": "pending as of 2026-10-22"
+    }
+  ]
+}
